@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "skillTest"
+    }
+  },
+  "defaultProject": "skillTest",
+  "cli": {
+    "analytics": "0a5a3b2c-8ae7-4175-8126-8a460df799b1"
+  }
 }

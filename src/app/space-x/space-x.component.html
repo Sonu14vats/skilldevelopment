@@ -1,0 +1,65 @@
+<div  class="container1">
+  <h2 class="heading">SpaceX Launch Programs</h2>
+  <div class="pf-side">
+    <h3>Filters</h3>
+    <div  class="bta-F" >Launch Year</div>
+    <br>
+    <div class="box" (click)="Launchload('2007')">2007</div>
+    <div class="box" (click)="Launchload('2008')">2008</div>
+    <br>
+    <div class="box" (click)="Launchload('2009')">2009</div>
+    <div class="box" (click)="Launchload('2010')">2010 </div>
+    <br>
+    <div class="box" (click)="Launchload('2011')">2011</div>
+    <div class="box" (click)="Launchload('2012')">2012</div>
+    <br>
+    <div class="box" (click)="Launchload('2013')">2013</div>
+    <div class="box" (click)="Launchload('2014')">2014 </div>
+    <br>
+    <div class="box" (click)="Launchload('2015')">2015</div>
+    <div class="box" (click)="Launchload('2016')">2016</div>
+    <br>
+    <div class="box" (click)="Launchload('2017')">2017</div>
+    <div class="box" (click)="Launchload('2018')">2018</div>
+    <br>
+    <div class="box" (click)="Launchload('2019')">2019</div>
+    <div class="box" (click)="Launchload('2020')">2020</div>
+    <div  class="bta-n" >Sucessfully Launch</div>
+    <br>
+    <div class="box" (click)="LauncdSuccessload(true)">True</div>
+    <div class="box" (click)="LauncdSuccessload(false)">False</div>
+    <div  class="bta-n" >Sucessfully Landing</div>
+    <br>
+    <div class="box" (click)="LandSuccessload(true)">True</div>
+    <div class="box" (click)="LandSuccessload(false)">False</div>
+  </div>
+  <div class="pf-bxc">
+    <div class="row">
+      <div class="col-sm-3 col-xs-6"  *ngFor="let detail of XspaceDetails">
+          <div class="bx-f zoom wt-shadow">
+           <span class="card">
+             <img  [src]="detail.links.mission_patch_small">
+        </span>
+            <p>{{detail.mission_name}} #{{detail.flight_number}}</p>
+            <span><b>Mission Ids:</b>
+              <ng-container *ngFor="let list of detail.mission_id"><br>
+              <p class="List" >{{list}}</p>
+                </ng-container>
+            </span>
+            <br>
+            <div><b>Launch Year:</b>
+              <span class="colours">{{detail.launch_year}}</span>
+            </div><br>
+            <div><b>Sucessfully Launch:</b>
+              <span class="colours">{{detail.launch_success}}</span>
+            </div>
+            <br>
+            <div><b>Sucessfully Landing:</b>
+              <span class="colours">{{detail.launch_landing || 'launch_landing'}}</span>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+</div>
